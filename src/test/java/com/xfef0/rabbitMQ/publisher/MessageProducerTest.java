@@ -31,7 +31,7 @@ class MessageProducerTest {
     @Test
     void shouldSendMessage() {
         ReflectionTestUtils.setField(messageProducer, "exchange", EXCHANGE);
-        ReflectionTestUtils.setField(messageProducer, "routingKey", ROUTING_KEY);
+        ReflectionTestUtils.setField(messageProducer, "stringRoutingKey", ROUTING_KEY);
         String message = "testing message production";
 
         messageProducer.sendMessage(message);

@@ -15,13 +15,13 @@ public class MessageProducer {
 
     @Value("${rabbitmq.exchange.name}")
     private String exchange;
-    @Value("${rabbitmq.routing.key}")
-    private String routingKey;
+    @Value("${rabbitmq.string-routing.key}")
+    private String stringRoutingKey;
 
     private final RabbitTemplate rabbitTemplate;
 
     public void sendMessage(String message) {
-        rabbitTemplate.convertAndSend(exchange, routingKey, message);
+        rabbitTemplate.convertAndSend(exchange, stringRoutingKey, message);
         LOGGER.info("Message sent: {}", message);
     }
 
